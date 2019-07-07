@@ -1,0 +1,15 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: todo
+    hostname: todo
+    ports:
+      - "13306:3306"
+    environment:
+      - "MYSQL_USER=root"
+      - "MYSQL_ROOT_PASSWORD=zaqroot"
+      - "MYSQL_DATABASE=todo_local"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/config:/etc/mysql/conf.d
