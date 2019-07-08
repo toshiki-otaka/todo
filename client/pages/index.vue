@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '~/plugins/axios';
 import itemForm from '~/components/item-form.vue';
 import itemTable from '~/components/item-table.vue';
 
@@ -22,7 +22,7 @@ export default {
     items: []
   },
   asyncData() {
-    return axios.get('http://localhost:8080/items')
+    return axios.get('/items')
     .then((res) => {
       return {
         items: res.data

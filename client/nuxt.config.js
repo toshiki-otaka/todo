@@ -33,7 +33,11 @@ export default {
   */
   modules: [
     '@nuxtjs/axios',
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    [
+      '@nuxtjs/dotenv',
+      { filename: process.env.NODE_ENV === 'development' ? "./config/.env.dev" : "./config/.env.prod" }
+    ]
   ],
   axios: {},
   /*

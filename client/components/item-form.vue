@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '~/plugins/axios';
 
 export default {
   data() {
@@ -28,7 +28,7 @@ export default {
       params.append('title', this.title);
       params.append('desc', this.desc);
 
-      axios.post('http://localhost:8080/items/create', params)
+      axios.post('/items/create', params)
       .then((res) => {
         this.$parent.items.unshift(res.data);
 

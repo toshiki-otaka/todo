@@ -26,13 +26,13 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '~/plugins/axios';
 
 export default {
   props: ['items'],
   methods: {
     close(itemId) {
-      axios.put('http://localhost:8080/items/close?itemId=' + itemId)
+      axios.put('/items/close?itemId=' + itemId)
       .then((res) => {
         this.items.forEach(element => {
           if (element.id === itemId) {
@@ -42,7 +42,7 @@ export default {
       })
     },
     open(itemId) {
-      axios.put('http://localhost:8080/items/open?itemId=' + itemId)
+      axios.put('/items/open?itemId=' + itemId)
       .then((res) => {
         this.items.forEach(element => {
           if (element.id === itemId) {
