@@ -44,6 +44,8 @@ func main() {
 
 	mux := router.Init(handlerRegistry)
 
+	printLog("server ready")
+
 	// webサーバー起動
 	http.ListenAndServe(":8080", mux)
 }
