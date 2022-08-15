@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"todo/server/config"
 	"todo/server/domain/model"
@@ -45,4 +46,8 @@ func main() {
 
 	// webサーバー起動
 	http.ListenAndServe(":8080", mux)
+}
+
+func printLog(msg string) {
+	fmt.Println(msg)
 }
